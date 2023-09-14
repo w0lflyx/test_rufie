@@ -37,7 +37,7 @@ class MainWin(QWidget):
         self.setLayout(self.layout_line)
     
     def next_click(self):
-        #вызов конструктора второго окна self.tw = TestWin()
+        self.tw = TestWin() #вызов конструктора второго окна self.tw = TestWin()
         self.hide()  #скрыть текущее окно
 
 
