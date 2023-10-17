@@ -12,9 +12,9 @@ from instr import *
 class Experiment():
     def __init__ (self, age, test1, test2, test3):
         self.age = age
-        self.test1 = test1
-        self.test2 = test2
-        self.test3 = test3
+        self.t1 = test1
+        self.t2 = test2
+        self.t3 = test3
         
 
 
@@ -72,7 +72,7 @@ class TestWin(QWidget):
     def next_click(self):
         
         self.hide()
-        self.exp = Experiment(self.line.age.text(), self.line_test1.text(), self.line_test2.text(), self.line_test3.text())
+        self.exp = Experiment(self.line_age.text(), self.line_test1.text(), self.line_test2.text(), self.line_test3.text())
         self.tw = FinalWin(self.exp)
 
     def timer_test(self): #функция вызывается по нажатию кнопки баттон 1
@@ -121,9 +121,9 @@ class TestWin(QWidget):
         time = time.addSecs(-1)
         self.text_timer.setText(time.toString("hh:mm:ss"))
         if int(time.toString("hh:mm:ss"[6:8]) )>= 45:
-            self.text_timer.setStyleSheet("color:rgb(0, 255, 0")
+            self.text_timer.setStyleSheet("color:rgb(0, 255, 0)")
         elif  int(time.toString("hh:mm:ss"[6:8]))<= 15: 
-            self.text_timer.setStyleSheet("color:rgb(0, 255, 0")
+            self.text_timer.setStyleSheet("color:rgb(0, 255, 0)")
         else:
             self.text_timer.setStyleSheet("color, rgb(0, 0, 0)")
         self.text_timer.setFont(QFont("Times", 36, QFont.Bold))
